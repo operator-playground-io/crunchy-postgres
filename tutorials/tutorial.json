@@ -1,0 +1,21 @@
+{
+   "name":"Crunchy Data PostgreSQL Operator Tutorial",
+   "appLayout":"accordion",
+   "appTheme":"g90",
+   "footer":"footer.md",
+   "tutorials":[
+      {
+         "description":"The Stack comprises of a Crunchy Data PostgreSQL Operator",
+         "duration":"30 min",
+         "tutorial_name":"Crunchy-PostgreSQL-Operator-tutorial.md",
+         "title":"Crunchy Data PostgreSQL Operator"
+      }
+   ],
+   "usefulLinks":[
+      {
+         "title":"Crunchy PostgreSQL Operator",
+         "description":"Crunchy PostgreSQL Operator ",
+         "url":"https://operatorhub.io/operator/postgresql"
+      }
+   ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Crunchy Data PostgreSQL Operator",
+  "description": "Crunchy Data PostgreSQL Operator",
+  "logo": "_images/SalesStack.png",
+  "enabled": true,
+  "language": [
+    "operators"
+  ],
+  "document": "data-logging-stack",
+  "stack_id": "Crunchy-PostgreSQL-Operator",
+  "type": "stack",
+  "categories": [
+    "PostgreSQL"
+  ],
+  "has_dataset": false,
+  "has_api": false,
+  "git_url": "https://github.com/operator-playground-io/crunchy-postgres",
+  "git_commit": "6b3719f53d2e3fbd921e508bd95c94affd519bf2",
+  "installTime": "5 minutes",
+  "isStacksSaved": true
+}
