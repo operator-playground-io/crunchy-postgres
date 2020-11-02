@@ -39,9 +39,7 @@ Create a PostgreSQL DB Cluster
 pgo create cluster my-db --username pguser --password password -n pgo
 ```
 
-### PostgreSQL DB Example Application 
-***Contacts Application (React/Node.js/PostgreSQL) - An Example to use CrunchyData PostgreSQL DB Cluster***
-*** This example comprises of a PostgreSQL , Backend and Frontend deployed as Microservices***
+### PostgreSQL DB Example Application :Contacts Application (React/Node.js/PostgreSQ
 
 ***Introduction***
 
