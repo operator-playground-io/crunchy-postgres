@@ -39,18 +39,16 @@ Create a PostgreSQL DB Cluster
 pgo create cluster my-db --username pguser --password password -n pgo
 ```
 
-### Try an Example 
----
-title: Contacts Application (React/Node.js/PostgreSQL) - An Example to use CrunchyData PostgreSQL DB Cluster 
-description: The Stack comprises of a PostgreSQL , Backend and Frontend deployed as Microservices
----
+### PostgreSQL DB Example Application 
+***Contacts Application (React/Node.js/PostgreSQL) - An Example to use CrunchyData PostgreSQL DB Cluster***
+*** This example comprises of a PostgreSQL , Backend and Frontend deployed as Microservices***
 
-### Introduction
+***Introduction***
 
 Contacts application comprises of a crunchydata PostgreSQL database , backend and frontend which are deployed independently as a microservice.
 The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
 
-### Code Structure
+***Code Structure***
 
 ![codestructure](_images/contacts-app-structure.png)
 
@@ -59,6 +57,7 @@ It follows a simple modular and MVC pattern. There are 3 folders that are of our
 - frontend: This contains the frontend code and uses Pug as a templating engine for view.
 - backend: This contains all the backend code that is building using express js.
 
+### Try the example
 Get the Cluster IP
 ```execute
 export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
@@ -88,13 +87,13 @@ Start the application (Backend and Frontend) with Skaffold
 cd /home/student/projects/edge-node-react-postgres-contacts-deploy&& skaffold config set default-repo localhost:5000 && skaffold run
 ```
 
-### Access the application
+### Access the example application
 
 Click on the Key icon on the Stack Builder Dashboard and copy the value under the `DNS` section and `IP` field
 
 URL :  http://##DNS.ip##:30465
 
-### Deploy changes to Kubernetes in Dev Mode
+### To Deploy changes to Kubernetes in Dev Mode
 
 Go to Developer Dashboard tab, it will provide you with the IDE along with the integrated terminal.  Click on the bottom status bar and select `TERMINAL`. 
 
@@ -122,12 +121,12 @@ On exiting the command, Skaffold will automatically destroy all the resources it
 
 Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
 
-### Clean up the Kubernetes resources
+### Clean up the Kubernetes resources (Example application and PostgreSQL DB)
 
 You can delete all the application resources created by executing the following command:
 
 ```execute
-kubectl delete -f k8s/
+cd /home/students/projects/edge-node-react-postgres-contacts-deploy && kubectl delete -f k8s/
 ```
 
 To delete the PostgreSQL DB , execute the below commands:
