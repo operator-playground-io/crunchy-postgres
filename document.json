@@ -5,7 +5,7 @@
   "has_supporting_content": true,
   "stack_id": "Crunchy-PostgreSQL-Operator",
   "type": "stack",
-  "categories": ["PostgreSQL"],
+  "categories": ["Database"],
   "platform": "Kubernetes",
   "cover": "cover.md",
   "meta": {

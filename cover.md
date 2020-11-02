@@ -1,9 +1,7 @@
 <h1 align="center">Crunchy Data PostgreSQL Operator</h1>
-<p align="center">
- <img width="150" src="crunchy_logo.png" alt="Crunchy Data"/>
-</p>
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/CrunchyData/postgres-operator)](https://goreportcard.com/report/github.com/CrunchyData/postgres-operator)
+![Logo](_images/logo.PNG)
+
 
 # Run your own production-grade PostgreSQL-as-a-Service on Kubernetes!
 
@@ -123,7 +121,7 @@ The PostgreSQL Operator includes various components that get deployed to your
 Kubernetes cluster as shown in the following diagram and detailed
 in the Design section of the documentation for the version you are running.
 
-![Reference](https://access.crunchydata.com/documentation/postgres-operator/latest/Operator-Architecture.png)
+![Architecture](_images/architecture.PNG)
 
 The PostgreSQL Operator is developed and tested on CentOS and RHEL linux platforms but is known to run on other Linux variants.
 
