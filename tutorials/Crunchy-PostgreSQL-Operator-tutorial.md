@@ -34,25 +34,25 @@ The Crunchy PostgreSQL Operator automates and simplifies deploying and managing 
     ```
 ### Clean up the Kubernetes resources
 
-To delete the PostgreSQL DB , execute the below commands:
+    To delete the PostgreSQL DB , execute the below commands:
 
-```execute
-cd /home/student/postgres-operator
-export PGO_OPERATOR_NAMESPACE=pgo
-```
+    ```execute
+    cd /home/student/postgres-operator
+    export PGO_OPERATOR_NAMESPACE=pgo
+    ```
 
-```execute
-PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh
-```
+    ```execute
+    PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh
+    ```
 
-```execute
-export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key
-```
+    ```execute
+    export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key
+    ```
 
-```execute
-export PGO_APISERVER_URL=https://127.0.0.1:32443
-pgo delete cluster contacts -n pgo
-```
+    ```execute
+    export PGO_APISERVER_URL=https://127.0.0.1:32443
+    pgo delete cluster contacts -n pgo
+    ```
 
 
 
