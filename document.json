@@ -38,7 +38,7 @@
     {
       "name": "Developer Dashboard",
       "url": "##DNS.host##/codeserver",
-      "enabled": false
+      "enabled": true
     }
   ]
 }
