@@ -56,6 +56,16 @@ It follows a simple modular and MVC pattern. There are 3 folders that are of our
 - backend: This contains all the backend code that is building using express js.
 
 ### Try the example
+For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator
+
+```execute
+cd /home/student/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
+```
+Install Client Credentials and Download the PGO Binary and Client Certificates:
+
+```execute
+PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh
+```
 Get the Cluster IP
 ```execute
 export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
@@ -72,13 +82,13 @@ Create the Contacts DB PostgreSQL Service
 ```execute
 cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml
 ```
-```execute
-until nc -z -v -w30 $ip_addr 30435; do echo \"Waiting for Contacts database connection...\"; sleep 5; done;
-```
-
 Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB.
 ```execute
 cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
+```
+Check if the Contacts DB is up and running
+```execute
+until nc -z -v -w30 $ip_addr 30435; do echo \"Waiting for Contacts database connection...\"; sleep 5; done;
 ```
 Start the application (Backend and Frontend) with Skaffold
 ```execute
