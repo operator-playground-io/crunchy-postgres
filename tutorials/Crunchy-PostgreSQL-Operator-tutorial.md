@@ -13,7 +13,7 @@ The Crunchy PostgreSQL Operator automates and simplifies deploying and managing 
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator
 
 ```execute
-cd /home/student/postgres-operator
+cd /home/student/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
 ```
 
 Install Client Credentials and Download the PGO Binary and Client Certificates:
@@ -54,4 +54,5 @@ export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pg
 ```execute
 export PGO_APISERVER_URL=https://127.0.0.1:32443
 pgo delete cluster contacts -n pgo
+```
 ```
