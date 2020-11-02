@@ -36,8 +36,40 @@ export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pg
 Create a PostgreSQL DB Cluster 
 
 ```execute
-pgo create cluster contacts --username pguser --password password -n pgo
+pgo create cluster my-db --username pguser --password password -n pgo
 ```
+
+### Try an Example 
+
+Get the Cluster IP
+```execute
+export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
+```
+Get the Example 
+```execute
+cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-react-postgres-contacts-deploy.git
+```
+Setup the Backend API for deployment
+```execute
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i \"s|ip|$ip_addr|\" .env && sed -i \"s|port|$backend_port|\" .env
+```
+Create the Contacts DB PostgreSQL Service
+```execute
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml
+```
+```execute
+until nc -z -v -w30 $ip_addr 30435; do echo \"Waiting for Contacts database connection...\"; sleep 5; done;
+```
+
+Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB.
+```execute
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
+```
+Start the application (Backend and Frontend) with Skaffold
+```execute
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy&& skaffold config set default-repo localhost:5000 && skaffold run
+```
+
 ### Clean up the Kubernetes resources
 
 To delete the PostgreSQL DB , execute the below commands:
