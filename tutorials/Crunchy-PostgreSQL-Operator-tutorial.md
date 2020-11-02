@@ -32,8 +32,6 @@ Create a PostgreSQL DB Cluster
 ```execute
 pgo create cluster contacts --username pguser --password password -n pgo
 ```
-
-
 ### Clean up the Kubernetes resources
 
 To delete the PostgreSQL DB , execute the below commands:
@@ -55,4 +53,5 @@ export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pg
 export PGO_APISERVER_URL=https://127.0.0.1:32443
 pgo delete cluster contacts -n pgo
 ```
-```
+
+
