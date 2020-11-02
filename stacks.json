@@ -4,7 +4,7 @@
   "logo": "_images/SalesStack.png",
   "enabled": true,
   "language": [
-    "operators"
+    "Dataset"
   ],
   "document": "data-logging-stack",
   "stack_id": "Crunchy-PostgreSQL-Operator",
