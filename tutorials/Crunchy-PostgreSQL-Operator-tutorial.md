@@ -66,7 +66,7 @@ cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-nod
 ```
 Setup the Backend API for deployment
 ```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i \"s|ip|$ip_addr|\" .env && sed -i \"s|port|$backend_port|\" .env
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i "s|ip|$ip_addr|" .env && sed -i "s|port|$backend_port|" .env .env
 ```
 Create the Contacts DB PostgreSQL Service
 ```execute
