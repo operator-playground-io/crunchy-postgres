@@ -4,17 +4,17 @@ title: Crunchy Data PostgreSQL Operator Tutorial
 description: This tutorial explains how to create a DB using Crunchy PostgreSQL Operator
 ---
 
-## Introduction
+### Introduction
 
 The Crunchy PostgreSQL Operator automates and simplifies deploying and managing open source PostgreSQL clusters on Kubernetes and other Kubernetes-enabled Platforms by providing the essential features you need to keep your PostgreSQL clusters up and running.
 
-## Check the PostgreSQL DB Operator 
+### Check the PostgreSQL DB Operator 
 
 ```execute
 kubectl get pods -n pgo
 ```
 
-## Create database
+### Create database
 
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator
 
@@ -39,25 +39,18 @@ Create a PostgreSQL DB Cluster
 pgo create cluster my-db --username pguser --password password -n pgo
 ```
 
-## Try an Example 
-```
+### Try an Example 
 ---
-title: Contacts Application (React/Node.js/PostgreSQL) Stack Tutorial
+title: Contacts Application (React/Node.js/PostgreSQL) - An Example to use CrunchyData PostgreSQL DB Cluster 
 description: The Stack comprises of a PostgreSQL , Backend and Frontend deployed as Microservices
 ---
 
 ### Introduction
 
-Contacts application comprises of a PostgreSQL database , backend and frontend which are deployed independently as a microservice.
+Contacts application comprises of a crunchydata PostgreSQL database , backend and frontend which are deployed independently as a microservice.
 The example also uses Skaffold which handles the workflow for building, pushing and deploying your application, allowing you to focus on what matters most: writing code.
 
-#### Access the application
-
-Click on the Key icon on the Stack Builder Dashboard and copy the value under the `DNS` section and `IP` field
-
-URL :  http://##DNS.ip##:30465
-
-#### Code Structure
+### Code Structure
 
 ![codestructure](_images/contacts-app-structure.png)
 
@@ -101,7 +94,7 @@ Click on the Key icon on the Stack Builder Dashboard and copy the value under th
 
 URL :  http://##DNS.ip##:30465
 
-#### Deploy changes to Kubernetes in Dev Mode
+### Deploy changes to Kubernetes in Dev Mode
 
 Go to Developer Dashboard tab, it will provide you with the IDE along with the integrated terminal.  Click on the bottom status bar and select `TERMINAL`. 
 
@@ -129,7 +122,7 @@ On exiting the command, Skaffold will automatically destroy all the resources it
 
 Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a normal mode. In this mode, the resources created remains unless the user deletes them.
 
-## Clean up the Kubernetes resources
+### Clean up the Kubernetes resources
 
 You can delete all the application resources created by executing the following command:
 
