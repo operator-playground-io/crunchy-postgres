@@ -66,6 +66,16 @@ Install Client Credentials and Download the PGO Binary and Client Certificates:
 ```execute
 PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh
 ```
+Export PGO data that will be used for Cluster creation
+
+```execute
+export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key && export PGO_APISERVER_URL=https://127.0.0.1:32443
+```
+Create a contacts PostgreSQL DB Cluster 
+
+```execute
+pgo create cluster contacts --username pguser --password password -n pgo
+```
 Get the Cluster IP
 ```execute
 export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
