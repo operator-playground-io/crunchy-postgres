@@ -10,7 +10,7 @@
   "cover": "cover.md",
   "meta": {
     "Database": ["PostgreSQL"],
-    "Type":[
+    "Language":[
          "Operators"
       ],
     "Install time": ["5 minutes"]
@@ -41,7 +41,7 @@
     {
       "name": "Developer Dashboard",
       "url": "##DNS.host##/codeserver",
-      "enabled": false
+      "enabled": true
     }
   ]
 }
