@@ -10,6 +10,9 @@
   "cover": "cover.md",
   "meta": {
     "Database": ["PostgreSQL"],
+    "Language":[
+         "Operators"
+      ],
     "Install time": ["5 minutes"]
   },
   "commands": [
