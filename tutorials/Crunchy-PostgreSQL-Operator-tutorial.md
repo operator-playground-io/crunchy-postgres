@@ -1,4 +1,3 @@
-```
 ---
 title: Crunchy Data PostgreSQL Operator Tutorial
 description: This tutorial explains how to create a DB using Crunchy PostgreSQL Operator
