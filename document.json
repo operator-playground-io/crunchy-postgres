@@ -16,8 +16,8 @@
     "Install time": ["5 minutes"]
   },
 "deployment_information": {
-  "Operator code": "/home/student/projects/postgres-operator",
-  "Kubernetes Namespace": "pgo"
+  "Operator Project": "/home/student/projects/postgres-operator",
+  "Deployment Namespace": "pgo"
 },
   "commands": [
     {
