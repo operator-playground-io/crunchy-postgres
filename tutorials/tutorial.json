@@ -9,7 +9,14 @@
          "duration":"30 min",
          "tutorial_name":"Crunchy-PostgreSQL-Operator-tutorial.md",
          "title":"Crunchy Data PostgreSQL Operator"
+      },
+      {
+         "description":" Sample Application using PostgreSQL DB Cluster from Crunchy",
+         "duration":"30 min",
+         "tutorial_name":"Crunchy-db-example-application.md",
+         "title":"Crunchy Data PostgreSQL Operator"
       }
+      
    ],
    "usefulLinks":[
       {
