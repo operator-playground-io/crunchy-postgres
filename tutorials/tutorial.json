@@ -5,7 +5,7 @@
    "footer":"footer.md",
    "tutorials":[
       {
-         "description":"The Stack comprises of a Crunchy Data PostgreSQL Operator",
+         "description":" A User Guide for Crunchy Data PostgreSQL Operator",
          "duration":"30 min",
          "tutorial_name":"Crunchy-PostgreSQL-Operator-tutorial.md",
          "title":"Crunchy Data PostgreSQL Operator"
