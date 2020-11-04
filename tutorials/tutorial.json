@@ -14,7 +14,7 @@
          "description":" Sample Application using PostgreSQL DB Cluster from Crunchy",
          "duration":"30 min",
          "tutorial_name":"Crunchy-db-example-application.md",
-         "title":"Crunchy Data PostgreSQL Operator"
+         "title":"Sample Application Tutorial"
       }
       
    ],
