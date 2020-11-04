@@ -1,4 +1,3 @@
-```
 ---
 title: Crunchy Data PostgreSQL Operator Sample Application Tutorial
 description: This tutorial explains how to use a PostgreSQL DB cluster created by the operator in an application.
