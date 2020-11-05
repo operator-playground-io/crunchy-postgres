@@ -18,7 +18,7 @@ kubectl get pods -n pgo
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator
 
 ```execute
-cd /home/student/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
+cd /home/student/projects/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
 ```
 
 Install Client Credentials and Download the PGO Binary and Client Certificates:
