@@ -145,7 +145,7 @@ PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "select 
 ```
 2. INSERT Command
 ```execute
-INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (6, 'Tim', 28, 'Texas', '2009-12-13');
+PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (6, 'Tim', 28, 'Texas', '2009-12-13');"
 ```
 
 
