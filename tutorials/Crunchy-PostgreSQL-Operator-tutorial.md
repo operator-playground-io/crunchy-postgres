@@ -102,7 +102,7 @@ CREATE TABLE COMPANY(
 You can verify if your table has been created successfully using \d command, which will be used to list down all the tables in an attached database.
 
 ```execute
-\d company
+\dt 
 ```
 ### Insert Values to Table
 
@@ -138,3 +138,15 @@ SELECT * FROM company;
 ```execute
 \q
 ```
+### Run a command remotely 
+1. SELECT Command
+```execute
+PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "select * from company;"
+```
+2. INSERT Command
+```execute
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (6, 'Tim', 28, 'Texas', '2009-12-13');
+```
+
+
+
