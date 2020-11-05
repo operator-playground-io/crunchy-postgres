@@ -1,7 +1,7 @@
 {
   "name": "Crunchy Data PostgreSQL Operator",
   "description": "Crunchy Data PostgreSQL Operator",
-  "logo": "_images/logo.png",
+  "logo": "_images/SalesStack.png",
   "has_supporting_content": true,
   "stack_id": "Crunchy-PostgreSQL-Operator",
   "type": "stack",
