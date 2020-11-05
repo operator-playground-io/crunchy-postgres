@@ -68,10 +68,18 @@ spec:
   sessionAffinity: None
   type: NodePort" | kubectl apply -n pgo -f -
 ```
+Check The Service 
+```execute
+kubectl get svc -n pgo | grep "my-sample-db"
+```
 
 Get the Cluster IP
 ```execute
 export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
+```
+Check the Cluster IP Address
+```execute
+echo $ip_addr
 ```
 
 ### Connect to DB from the cluster
