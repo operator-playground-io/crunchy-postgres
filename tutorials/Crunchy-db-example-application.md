@@ -64,7 +64,7 @@ cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubect
 ```
 Check if the Contacts DB is up and running
 ```execute
-until nc -z -v -w30 $ip_addr 30435; do echo \"Waiting for Contacts database connection...\"; sleep 5; done;
+nc -z -v -w30 $ip_addr 30435
 ```
 Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB.
 ```execute
