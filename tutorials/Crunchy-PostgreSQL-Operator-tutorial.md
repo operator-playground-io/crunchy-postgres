@@ -132,3 +132,9 @@ PostgreSQL SELECT statement is used to fetch the data from a database table, whi
 ```execute
 SELECT * FROM company;
 ```
+
+### To Exit from the DB
+
+```execute
+\q
+```
