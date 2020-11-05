@@ -56,13 +56,13 @@ Create the Contacts DB PostgreSQL Service
 ```execute
 cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml
 ```
-Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB.
-```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
-```
 Check if the Contacts DB is up and running
 ```execute
 until nc -z -v -w30 $ip_addr 30435; do echo \"Waiting for Contacts database connection...\"; sleep 5; done;
+```
+Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB.
+```execute
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
 ```
 Start the application (Backend and Frontend) with Skaffold
 ```execute
