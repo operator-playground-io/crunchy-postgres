@@ -23,7 +23,7 @@ It follows a simple modular and MVC pattern. There are 3 folders that are of our
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator
 
 ```execute
-cd /home/student/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
+cd /home/student/projects/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
 ```
 Install Client Credentials and Download the PGO Binary and Client Certificates:
 
@@ -114,7 +114,7 @@ cd /home/students/projects/edge-node-react-postgres-contacts-deploy && kubectl d
 To delete the PostgreSQL DB , execute the below commands:
 
 ```execute
-cd /home/student/postgres-operator
+cd /home/student/projects/postgres-operator
 export PGO_OPERATOR_NAMESPACE=pgo
 ```
 ```execute
