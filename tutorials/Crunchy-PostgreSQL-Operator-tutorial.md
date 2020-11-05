@@ -78,8 +78,49 @@ export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
 ```execute
 PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db
 ```
+### Create TABLE
+The PostgreSQL CREATE TABLE statement is used to create a new table in any of the given database.
+```execute
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL,
+   JOIN_DATE	  DATE
+);
+```
 
+You can verify if your table has been created successfully using \d command, which will be used to list down all the tables in an attached database.
 
+```execute
+\d company
+```
+### Insert Values to Table
 
+The PostgreSQL INSERT INTO statement allows one to insert new rows into a table. One can insert a single row at a time or several rows as a result of a query.
 
+The following example inserts a row into the COMPANY table −
+```execute
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (1, 'Paul', 32, 'California', 20000.00,'2001-07-13');
+```
+The following example is to insert a row; here salary column is omitted and therefore it will have the default value −
+```execute
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (2, 'Allen', 25, 'Texas', '2007-12-13');
+```
+The following example uses the DEFAULT clause for the JOIN_DATE column rather than specifying a value −
+```execute
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (3, 'Teddy', 23, 'Norway', 20000.00, DEFAULT );
+```
+The following example inserts multiple rows using the multirow VALUES syntax −
+```execute
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00, '2007-12-13' ), (5, 'David', 27, 'Texas', 85000.00, '2007-12-13');
+```
+All the above statements would create the following records in COMPANY table. The next chapter will teach you how to display all these records from a table.
 
+### Fetch the Data from the Table
+PostgreSQL SELECT statement is used to fetch the data from a database table, which returns data in the form of result table. These result tables are called result-sets.
+
+```execute
+SELECT * FROM company;
+```
