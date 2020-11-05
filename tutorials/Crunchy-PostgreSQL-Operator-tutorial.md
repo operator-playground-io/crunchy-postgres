@@ -37,6 +37,11 @@ Create a PostgreSQL DB Cluster
 ```execute
 pgo create cluster my-sample-db --username pguser --password password -n pgo
 ```
+Check the Sample DB Cluster state and wait until its in state **1/1**
+```execute
+kubectl get pods -n pgo | grep "my-sample-db"
+```
+![check-my-sample-db-state](_images/my-sample-db-1-1-state.PNG)
 
 ### Setup connectivity to the DB
 Create DB Service
