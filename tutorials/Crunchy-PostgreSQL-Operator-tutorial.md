@@ -35,7 +35,48 @@ export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pg
 Create a PostgreSQL DB Cluster 
 
 ```execute
-pgo create cluster my-db --username pguser --password password -n pgo
+pgo create cluster my-sample-db --username pguser --password password -n pgo
+```
+
+### Setup connectivity to the DB
+Create DB Service
+```execute
+echo "apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: my-sample-db
+    pg-cluster: my-sample-db
+    vendor: crunchydata
+  name: my-sample-db
+  namespace: pgo
+spec:
+  ports:
+  - name: sshd
+    nodePort: 30088
+    port: 2022
+    protocol: TCP
+    targetPort: 2022
+  - name: postgres
+    nodePort: 30445
+    port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    pg-cluster: my-sample-db
+    role: master
+  sessionAffinity: None
+  type: NodePort" | kubectl apply -n pgo -f -
+```
+
+Get the Cluster IP
+```execute
+export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
+```
+
+### Connect to DB from the cluster
+```execute
+PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db
 ```
 
 
