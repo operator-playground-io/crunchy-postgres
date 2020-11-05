@@ -40,6 +40,12 @@ Create a contacts PostgreSQL DB Cluster
 ```execute
 pgo create cluster contacts --username pguser --password password -n pgo
 ```
+Check the Contacts DB Cluster state and wait until its in state **1/1**
+```execute
+kubectl get pods -n pgo | grep "contacts"
+```
+![check-contacts-db-state](_images/contacts-db-1-1-state.PNG)
+
 Get the Cluster IP
 ```execute
 export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
