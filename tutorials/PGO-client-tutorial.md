@@ -91,12 +91,12 @@ Connect to database using PostgreSQL client (psql). Replace the 'primary-service
 'pgo test' or 'pgo show cluster' commands (don't incluse the port number, for example :5432).
 If needed replace the database (-d flag), user (-U flag) or password (PGPASSWORD).
 ```execute
-PGPASSWORD=password psql -h <primary-service-IP> -U pguser -d my-db
+PGPASSWORD=password psql -h primary-service-IP -U pguser -d my-db
 ```
 
 To enter interactively the password use this command. If needed replace the database (-d flag) or user (-U flag).
 ```execute
-psql -h <primary-service-IP> -U pguser -d my-db
+psql -h primary-service-IP -U pguser -d my-db
 ```
 
 Using the PostgreSQL client (psql) you can create tables, insert data into them and execute queries.
@@ -175,7 +175,7 @@ pgo create cluster my-db-copy --restore-from=my-db --username pguser --password 
 ### Backup and restore a database
 
 Backup 'my-db' database. By default the created backup is an incremental backup. A full backup is created when the database is created.
-Note that the command will just start the backup process. It will take a while until the backup will complete and will appear in the list of backups.
+Note that the command will just start the backup process. It will take a while until the backup will be completed and will appear in the list of backups.
 
 ```execute
 pgo backup my-db
