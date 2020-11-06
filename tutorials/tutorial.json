@@ -13,7 +13,7 @@
       {
          "description":"A User Guide for Crunchy Data PostgreSQL Operator (PGO) Client",
          "duration":"30 min",
-         "tutorial_name":"Advanced-Crunchy-PostgreSQL-Operator-tutorial.md",
+         "tutorial_name":"PGO-client-tutorial.md",
          "title":"PGO Client Tutorial"
       },
       {
