@@ -44,6 +44,7 @@ pgo create cluster contacts --username pguser --password password -n pgo
 Check the Sample DB Cluster state. The database will be available when both the status of the primary service and of the primary instance will be **UP**.
 ```execute
 pgo test contacts -n pgo
+```
 
 ![check-contacts-db-state](_images/contacts-db-1-1-state.PNG)
 
