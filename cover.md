@@ -123,7 +123,7 @@ in the Design section of the documentation for the version you are running.
 
 ![Architecture](_images/architecture.PNG)
 
-The PostgreSQL Operator is developed and tested on CentOS and RHEL linux platforms but is known to run on other Linux variants.
+The PostgreSQL Operator is developed and tested on CentOS and RHEL Linux platforms but is known to run on other Linux variants.
 
 ### Supported Platforms
 
