@@ -75,7 +75,7 @@ nc -z -v -w30 $ip_addr 30435
 
 Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB:
 ```execute
-PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
 ```
 
 Start the application (Backend and Frontend) with Skaffold:
