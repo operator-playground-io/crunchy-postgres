@@ -114,7 +114,7 @@ Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a 
 You can delete all the application resources created by executing the following command:
 
 ```execute
-cd /home/students/projects/edge-node-react-postgres-contacts-deploy && kubectl delete -f k8s/
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy && kubectl delete -f k8s/
 ```
 
 To delete the PostgreSQL DB , execute the below commands:
