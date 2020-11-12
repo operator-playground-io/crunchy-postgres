@@ -81,10 +81,10 @@ To get info about all the databases:
 pgo show cluster --all
 ```
 
-### How to use PostgreSQL client (psql) to connect and use the created database
+### How to use PostgreSQL client (psql)
 
 Connect to database using PostgreSQL client (psql). Replace the 'primary-service-IP' with the correct value from 
-'pgo test' or 'pgo show cluster' commands (don't include the port number, for example :5432).
+'pgo test' or 'pgo show cluster' commands (don't include the port number).
 If needed replace the database (-d flag), user (-U flag) or password (PGPASSWORD).
 ```execute
 PGPASSWORD=password psql -h primary-service-IP -U pguser -d my-db
@@ -95,7 +95,7 @@ To enter interactively the password use this command. If needed replace the data
 psql -h primary-service-IP -U pguser -d my-db
 ```
 
-Using the PostgreSQL client (psql) you can create tables, insert data into them and execute queries
+Using the PostgreSQL client (psql) you can create tables, insert data into them and execute queries.
 
 Create a table:
 ```execute

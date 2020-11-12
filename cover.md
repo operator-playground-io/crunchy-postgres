@@ -231,30 +231,6 @@ If you have the PostgreSQL and Client Interface installed in your environment an
 - [PostgreSQL Operator Documentation](https://access.crunchydata.com/documentation/postgres-operator/)
 - [`pgo` Client User Guide](https://access.crunchydata.com/documentation/postgres-operator/latest/pgo-client/)
 
-## Contributing to the Project
-
-Want to contribute to the PostgreSQL Operator project? Great! We've put together
-as set of contributing guidelines that you can review here:
-
-- [Contributing Guidelines](CONTRIBUTING.md)
-
-If you want to learn how to get up your development environment, please read our
-documentation here:
-
- - [Developer Setup](https://access.crunchydata.com/documentation/postgres-operator/latest/contributing/developer-setup/)
-
-Once you are ready to submit a Pull Request, please ensure you do the following:
-
-1. Reviewing the [contributing guidelines](CONTRIBUTING.md) and ensure your
-that you have followed the commit message format, added testing where
-appropriate, documented your changes, etc.
-1. Open up a pull request based upon the guidelines. If you are adding a new
-feature, please open up the pull request on the `master` branch. If you have
-a bug fix for a supported version, open up a pull request against the supported
-version branch (e.g. `REL_4_2` for 4.2)
-1. Please be as descriptive in your pull request as possible. If you are
-referencing an issue, please be sure to include the issue in your pull request
-
 ## Support
 
 If you believe you have found a bug or have detailed feature request, please open a GitHub issue and follow the guidelines for submitting a bug.

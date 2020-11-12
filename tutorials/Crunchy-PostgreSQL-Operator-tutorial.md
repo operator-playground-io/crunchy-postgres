@@ -112,7 +112,7 @@ CREATE TABLE COMPANY(
 );
 ```
 
-You can verify if your table has been created successfully using \d command, which will be used to list down all the tables in an attached database:
+You can verify if your table has been created successfully using \dt command, which will be used to list down all the tables in an attached database:
 ```execute
 \dt 
 ```
