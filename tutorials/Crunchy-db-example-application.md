@@ -85,7 +85,7 @@ skaffold config set default-repo localhost:5000 && skaffold run
 
 ### Access the example application
 
-Click on the Key icon on the Stack Builder Dashboard and copy the value under the `DNS` section and `IP` field
+Click on the Key icon on the dashboard and copy the value under the `DNS` section and `IP` field
 
 URL :  http://##DNS.ip##:30465
 
