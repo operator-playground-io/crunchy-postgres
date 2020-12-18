@@ -73,14 +73,29 @@ Check if the Contacts DB is up and running:
 nc -z -v -w30 $ip_addr 30435
 ```
 
-Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB:
+Navigate to the example:
 ```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy && PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
+cd /home/student/projects/edge-node-react-postgres-contacts-deploy
 ```
 
-Start the application (Backend and Frontend) with Skaffold:
+Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB:
 ```execute
-skaffold config set default-repo localhost:5000 && skaffold run
+PGPASSWORD=password psql -U pguser -h $ip_addr -p 30435 contacts < initialize-db.sql 2>output.txt
+```
+
+Setup skaffold default repository to the local one:
+```execute
+skaffold config set default-repo localhost:5000
+```
+
+Install and start the sample. To stop and remove the application you will need to follow the steps from **Clean up the Kubernetes resources**.
+```execute
+skaffold run
+```
+Alternatively you can use this command to install the sample, watch for code changes and re-deploy the application automatically.
+On exiting the command, Skaffold will automatically stop and delete the sample application. 
+```execute
+skaffold dev
 ```
 
 ### Access the example application
@@ -119,7 +134,7 @@ Also, you can use the `skaffold run` to deploy the changes onto Kubernetes as a 
 
 You can delete all the application resources created by executing the following command:
 ```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy && kubectl delete -f k8s/
+skaffold delete
 ```
 
 To delete the PostgreSQL DB , execute the below commands:
