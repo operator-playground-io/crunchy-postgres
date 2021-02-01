@@ -101,7 +101,6 @@ The Crunchy PostgreSQL Operator makes it easy to get your own PostgreSQL-as-a-Se
 
   6.Override your PostgreSQL configuration for each cluster
 
-```
 [disaster-recovery]: https://access.crunchydata.com/documentation/postgres-operator/latest/architecture/disaster-recovery/
 [disaster-recovery-s3]: https://access.crunchydata.com/documentation/postgres-operator/latest/architecture/disaster-recovery/#using-s3
 [disaster-recovery-scheduling]: https://access.crunchydata.com/documentation/postgres-operator/latest/architecture/disaster-recovery/#scheduling-backups
@@ -120,7 +119,6 @@ The Crunchy PostgreSQL Operator makes it easy to get your own PostgreSQL-as-a-Se
 [pgBackRest]: https://www.pgbackrest.org
 [pgBouncer]: https://access.crunchydata.com/documentation/pgbouncer/
 [pgMonitor]: https://github.com/CrunchyData/pgmonitor
-```
 
 ### Deployment Requirements :
 
