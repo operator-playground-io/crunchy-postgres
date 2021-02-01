@@ -212,7 +212,7 @@ Additional containers that are not directly integrated with the PostgreSQL Opera
 
 For more information about which versions of the PostgreSQL Operator include which components, please visit the [compatibility](https://access.crunchydata.com/documentation/postgres-operator/latest/configuration/compatibility/) section of the documentation.
 
-## Using the PostgreSQL Operator
+### Using the PostgreSQL Operator
 
 If you are new to the PostgreSQL Operator, you can follow along the [tutorial](https://access.crunchydata.com/documentation/postgres-operator/latest/tutorial/) to learn how to install the PostgreSQL Operator and how to use many of its features!
 
