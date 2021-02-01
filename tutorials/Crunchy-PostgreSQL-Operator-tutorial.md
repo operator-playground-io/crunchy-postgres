@@ -3,19 +3,6 @@ title: Crunchy Data PostgreSQL Operator Tutorial
 description: This tutorial explains how to create a DB using Crunchy PostgreSQL Operator
 ---
 
-### Introduction
-
-The Crunchy PostgreSQL Operator automates and simplifies deploying and managing open source PostgreSQL clusters on Kubernetes and other Kubernetes-enabled Platforms by providing the essential features you need to keep your PostgreSQL clusters up and running.
-
-### Check the PostgreSQL DB Operator 
-
-Execute the following command to check if the PostgreSQL Operator is running:
-```execute
-kubectl get pods -n pgo
-```
-
-You should see a pod starting with 'postgres-operator' with Ready value '4/4' and Status 'Running'.
-
 ### Create database
 
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator:

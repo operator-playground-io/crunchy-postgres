@@ -7,22 +7,27 @@
       {
          "description":" A User Guide for Crunchy Data PostgreSQL Operator",
          "duration":"30 min",
-         "tutorial_name":"Crunchy-PostgreSQL-Operator-tutorial.md",
-         "title":"1: Crunchy Data PostgreSQL Operator"
+         "tutorial_name":"operator-installation-verification-tutorial.md",
+         "title":"1: Operator Installation Verification"
       },
       {
-         "description":"A User Guide for Crunchy Data PostgreSQL Operator (PGO) Client",
+         "description":" A User Guide for Crunchy Data PostgreSQL Operator",
          "duration":"30 min",
-         "tutorial_name":"PGO-client-tutorial.md",
-         "title":"2: PGO Client Tutorial"
+         "tutorial_name":"Crunchy-PostgreSQL-Operator-tutorial.md",
+         "title":"2: Crunchy Data PostgreSQL Operator"
       },
       {
          "description":" Sample Application using PostgreSQL DB Cluster from Crunchy",
          "duration":"30 min",
          "tutorial_name":"Crunchy-db-example-application.md",
          "title":"3: Sample Application Tutorial"
-      }
-      
+      },
+      {
+         "description":"A User Guide for Crunchy Data PostgreSQL Operator (PGO) Client",
+         "duration":"30 min",
+         "tutorial_name":"PGO-client-tutorial.md",
+         "title":"4: PGO Client Tutorial"
+      }      
    ],
    "usefulLinks":[
       {
