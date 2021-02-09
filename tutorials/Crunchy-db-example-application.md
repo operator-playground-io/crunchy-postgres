@@ -106,14 +106,6 @@ URL :  http://##DNS.ip##:30465
 
 ### To Deploy changes to Kubernetes in Dev Mode
 
-Go to Developer Dashboard tab, it will provide you with the IDE along with the integrated terminal. Click on the bottom status bar and select `TERMINAL`. 
-
-k8s folder contains all the manifest files and defines the deployment strategy for the application.
-One can execute them using:
-```execute
-kubectl apply -f k8s/
-```
-
 In this example , we use `Skaffold` which simplifies local development. You can deploy the application in DEV mode which keeps watching for the files changes and on any change, triggers the entire deployment process automatically without the user having to run and manage it manually.
 
 Navigate to the example:
