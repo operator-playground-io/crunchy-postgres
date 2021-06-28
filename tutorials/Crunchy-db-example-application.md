@@ -55,17 +55,17 @@ export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
 
 Get the Example :
 ```execute
-cd /home/student/projects && git clone https://github.com/Andi-Cirjaliu/edge-node-react-postgres-contacts-deploy.git
+cd /home/student/projects && git clone https://github.com/operator-playground-io/crunchy-postgres-sample.git
 ```
 
 Setup the Backend API for deployment:
 ```execute
-cd edge-node-react-postgres-contacts-deploy/frontend && export backend_port=30456 && sed -i "s|ip|$ip_addr|" .env && sed -i "s|port|$backend_port|" .env
+cd crunchy-postgres-sample/frontend && export backend_port=30456 && sed -i "s|ip|$ip_addr|" .env && sed -i "s|port|$backend_port|" .env
 ```
 
 Create the Contacts DB PostgreSQL Service:
 ```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy/k8s && kubectl create -f contacts-service.yaml
+cd /home/student/projects/crunchy-postgres-sample/k8s && kubectl create -f contacts-service.yaml
 ```
 
 Check if the Contacts DB is up and running:
@@ -75,7 +75,7 @@ nc -z -v -w30 $ip_addr 30435
 
 Navigate to the example:
 ```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy
+cd /home/student/projects/crunchy-postgres-sample
 ```
 
 Create the Contacts DB PostgreSQL Cluster with username and password and initialize the DB:
@@ -110,7 +110,7 @@ In this example , we use `Skaffold` which simplifies local development. You can 
 
 Navigate to the example:
 ```execute
-cd /home/student/projects/edge-node-react-postgres-contacts-deploy
+cd /home/student/projects/crunchy-postgres-sample
 ```
 
 Deploy the changes in dev mode:
