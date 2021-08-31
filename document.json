@@ -26,7 +26,7 @@
     },
     {
       "description": "Clone and Prepare ",
-      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
+      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground-io/crunchy-postgres-scripts.git && cd crunchy-postgres-scripts && kubectl create -f postgresql.yaml"
     },
     {
       "description": "Get VM IP ",
