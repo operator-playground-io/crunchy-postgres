@@ -7,22 +7,27 @@ description: This tutorial explains how to create a DB using Crunchy PostgreSQL 
 
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator:
 ```execute
-cd /home/student/projects/postgres-operator && export PGO_OPERATOR_NAMESPACE=pgo 
+cd /home/student/projects/crunchy-postgres-scripts && export PGO_OPERATOR_NAMESPACE=pgo 
 ```
 
-Install Client Credentials and Download the PGO Binary and Client Certificates:
+Set namespace where the cluster is to be created
 ```execute
-PGO_CMD=kubectl ./deploy/install-bootstrap-creds.sh && PGO_CMD=kubectl ./installers/kubectl/client-setup.sh
+export PGO_NAMESPACE=pgo
 ```
 
-Export PGO data that will be used for Cluster creation:
+Set name of the cluster to be created
 ```execute
-export PATH=/home/student/.pgo/pgo:$PATH && export PGOUSER=/home/student/.pgo/pgo/pgouser && export PGO_CA_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_CERT=/home/student/.pgo/pgo/client.crt && export PGO_CLIENT_KEY=/home/student/.pgo/pgo/client.key && export PGO_APISERVER_URL=https://127.0.0.1:32443
+export pgo_cluster_name=my-sample-db
+```
+
+Set the location of your image repository
+```execute
+export cluster_image_prefix=registry.developers.crunchydata.com/crunchydata
 ```
 
 Create a PostgreSQL DB Cluster:
 ```execute
-pgo create cluster my-sample-db --username pguser --password password -n pgo
+kubectl apply -f pgcluster.yaml
 ```
 
 Check the Sample DB Cluster state. The database will be available when both the status of the primary service and of the primary instance will be **UP**. 
