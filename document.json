@@ -22,11 +22,11 @@
   "commands": [
     {
       "description": "Create Namespace",
-      "exec": "export PGO_OPERATOR_NAMESPACE=pgo && kubectl create namespace pgo"
+      "exec": "export PGO_OPERATOR_NAMESPACE=pgo"  
     },
     {
       "description": "Clone and Prepare ",
-      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
+      "exec": "cd /home/student/projects && git clone https://github.com/operator-playground-io/crunchy-postgres-scripts.git && cd crunchy-postgres-scripts && kubectl create -f postgresql.yaml && kubectl create -f service.yaml -n pgo"
     },
     {
       "description": "Get VM IP ",
