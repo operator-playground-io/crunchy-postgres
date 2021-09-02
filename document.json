@@ -35,6 +35,10 @@
     {
       "description": "Create a Service",
       "exec": "curl -o service.yaml https://raw.githubusercontent.com/operator-playground/postgres-operator/sample-app/service.yaml && kubectl create -f service.yaml -n pgo"
+    },
+    {
+      "description": "Wait for Postgres Operator to spin up ",
+      "exec": "until nc -z -v -w30 $ip_addr 32443; do echo \"Waiting for database connection...\"; sleep 5; done;"
     }
   ],
   "display": [
