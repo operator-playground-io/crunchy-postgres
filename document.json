@@ -23,6 +23,18 @@
     {
       "description": "Create Namespace",
       "exec": "export PGO_OPERATOR_NAMESPACE=pgo && kubectl create namespace pgo"
+    },
+    {
+      "description": "Clone and Prepare ",
+      "exec": "cd /home/student/projects && git clone -b sample-app https://github.com/operator-playground/postgres-operator && cd postgres-operator && kubectl create -f postgre.yaml && kubectl create -f secret.yaml"
+    },
+    {
+      "description": "Get VM IP ",
+      "exec": "export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)"
+    },
+    {
+      "description": "Create a Service",
+      "exec": "curl -o service.yaml https://raw.githubusercontent.com/operator-playground/postgres-operator/sample-app/service.yaml && kubectl create -f service.yaml -n pgo"
     }
   ],
   "display": [
