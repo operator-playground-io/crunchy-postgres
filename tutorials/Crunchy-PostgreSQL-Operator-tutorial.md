@@ -7,22 +7,7 @@ description: This tutorial explains how to create a DB using Crunchy PostgreSQL 
 
 For user to create PostgreSQL database Cluster using Crunchy PostgreSQL DB Operator:
 ```execute
-cd /home/student/projects/crunchy-postgres-scripts && export PGO_OPERATOR_NAMESPACE=pgo 
-```
-
-Set namespace where the cluster is to be created
-```execute
-export PGO_NAMESPACE=pgo
-```
-
-Set name of the cluster to be created
-```execute
-export pgo_cluster_name=my-sample-db
-```
-
-Set the location of your image repository
-```execute
-export cluster_image_prefix=registry.developers.crunchydata.com/crunchydata
+cd /home/student/projects/crunchy-postgres-scripts
 ```
 
 Create a PostgreSQL DB Cluster:
@@ -30,12 +15,14 @@ Create a PostgreSQL DB Cluster:
 kubectl apply -f pgcluster.yaml
 ```
 
-Check the Sample DB Cluster state. The database will be available when both the status of the primary service and of the primary instance will be **UP**. 
 ```execute
-pgo test my-sample-db -n pgo
+kubectl get pods -n pgo
 ```
 
-![check-my-sample-db-state](_images/my-sample-db-1-1-state.PNG)
+![check-pod-status](_images/cluster-pod-status.PNG)
+
+
+NOTE: Please wait till all pods are up and in running state. As shown above.
 
 ### Setup connectivity to the DB
 
@@ -74,20 +61,12 @@ Check the service:
 kubectl get svc -n pgo | grep "my-sample-db"
 ```
 
-Get the Cluster IP:
-```execute
-export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
-```
-
-Check the Cluster IP Address:
-```execute
-echo $ip_addr
-```
-
 ### Connect to DB from the cluster
 
 ```execute
-PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db
+export PGPASSWORD=$(kubectl get secret my-sample-db-postgres-secret -n pgo -o=jsonpath='{.data.password}' | base64 --decode)
+echo $PGPASSWORD
+psql -U postgres -h $ip_addr -p 30445 my-sample-db
 ```
 
 ### Create TABLE
@@ -161,6 +140,3 @@ PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "select 
 ```execute
 PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (6, 'Tim', 28, 'Texas', '2009-12-13');"
 ```
-
-
-
