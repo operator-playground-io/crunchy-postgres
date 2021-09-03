@@ -21,46 +21,32 @@ It follows a simple modular and MVC pattern. There are 3 folders that are of our
 
 ### Try the example
 
+Get the Example :
+
+```execute
+cd /home/student/projects && git clone https://github.com/operator-playground-io/crunchy-postgres-sample.git
+```
+
 For user to create PostgreSQL Database Cluster using Crunchy PostgreSQL DB Operator:
 ```execute
-cd /home/student/projects/crunchy-postgres-scripts && export PGO_OPERATOR_NAMESPACE=pgo
-```
-
-Set namespace where the cluster is to be created
-```execute
-export PGO_NAMESPACE=pgo
-```
-
-Set name of the cluster to be created
-```execute
-export pgo_cluster_name=contacts
-```
-
-Set the location of your image repository
-```execute
-export cluster_image_prefix=registry.developers.crunchydata.com/crunchydata
+cd /home/student/projects/crunchy-postgres-sample/k8s
 ```
 
 Create a contacts PostgreSQL DB Cluster:
 ```execute
-kubectl apply -f pgcluster.yaml
+kubectl apply -f contacts-pgcluster.yaml
 ```
 
-Check the Sample DB Cluster state. The database will be available when both the status of the primary service and of the primary instance will be **UP**.
 ```execute
-pgo test contacts -n pgo
+kubectl get pods -n pgo
 ```
 
-![check-contacts-db-state](_images/contacts-db-1-1-state.PNG)
+![check-pod-status](_images/cluster-pod-status.PNG)
+NOTE: Please wait till all pods are up and in running state. As shown above.
 
 Get the Cluster IP:
 ```execute
 export ip_addr=$(ifconfig eth1 | grep inet | awk '{print $2}' | cut -f2 -d:)
-```
-
-Get the Example :
-```execute
-cd /home/student/projects && git clone https://github.com/operator-playground-io/crunchy-postgres-sample.git
 ```
 
 Setup the Backend API for deployment:
@@ -143,7 +129,7 @@ export PGO_NAMESPACE=pgo
 ```
 
 ```execute
-kubectl delete -f pgcluster.yaml
+kubectl delete -f contacts-pgcluster.yaml
 ```
 
 ```execute
