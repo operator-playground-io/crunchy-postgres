@@ -141,10 +141,10 @@ SELECT * FROM company;
 
 1. Run a SELECT command:
 ```execute
-PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "select * from company;"
+psql -U postgres -h $ip_addr -p 30445 my-sample-db -c "select * from company;"
 ```
 
 2. Run an INSERT command:
 ```execute
-PGPASSWORD=password psql -U pguser -h $ip_addr -p 30445 my-sample-db -c "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (6, 'Tim', 28, 'Texas', '2009-12-13');"
+psql -U postgres -h $ip_addr -p 30445 my-sample-db -c "INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,JOIN_DATE) VALUES (6, 'Tim', 28, 'Texas', '2009-12-13');"
 ```
