@@ -21,13 +21,7 @@
          "duration":"30 min",
          "tutorial_name":"Crunchy-db-example-application.md",
          "title":"3: Sample Application Tutorial"
-      },
-      {
-         "description":"A User Guide for Crunchy Data PostgreSQL Operator (PGO) Client",
-         "duration":"30 min",
-         "tutorial_name":"PGO-client-tutorial.md",
-         "title":"4: PGO Client Tutorial"
-      }      
+      }    
    ],
    "usefulLinks":[
       {
