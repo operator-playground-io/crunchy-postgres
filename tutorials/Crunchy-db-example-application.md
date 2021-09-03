@@ -41,7 +41,7 @@ kubectl apply -f contacts-pgcluster.yaml
 kubectl get pods -n pgo
 ```
 
-![check-pod-status](_images/sample-application-pos-status.PNG)
+![check-pod-status](_images/sample-application-pos-status.jpg)
 NOTE: Please wait till all pods are up and in running state. As shown above.
 
 Get the Cluster IP:
